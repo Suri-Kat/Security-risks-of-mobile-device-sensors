@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Activity recognition</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script> 
+  </head>
+  <body>
+    <div style="margin: 10px 0;">
+      <div class="title" style="padding-left: 5px;">
+        Mysterious activity recognition
+        <img src="PhoneRecognition1.png" class="phone"></img>
+    </div>
+
+    <div class="container">
+      <form style="font-size: 20px;">
+      <label for="activity" style="font-size: 50px;">Activity recognition control panel:</label>
+
+
+      <button type="button" id="start" class="button-form">Start</button>
+      <button type="button" id="stop" class="button-form">Stop</button>
+  </form>
+  </div>
+
+  <div class="container">
+    <h3>Status of measurement:</h3>
+
+    <div id="sensor-container"></div>
+
+    <div id="userAgent-container"></div>
+    <div id="IPaddress-container"></div>
+    <br>
+    <div id="time-container"></div>
+    <div id="accelerometer-container"></div>
+    <div id="gyroscope-container"></div>
+    <div id="magnetometer-container"></div>
+    <div id="gravity-container"></div>
+    <div id="linearAcceleration-container"></div>
+    <div id="absoluteOrientation-container"></div>
+    <div id="relativeOrientation-container"></div>
+
+</div>
+
+      <div type="button" class="collapsible">Click here to hide <br> instructions</div>
+      <div class="extension">
+        <p style="margin: 15px;">
+          <br> 
+          This page can predict the activity you are currently doing. 
+          <br><br>
+          Try it out, did we guess correctly?
+          <br> </br>
+          The activities this page is trained to  detect are the following:</br>
+             Lying, Sitting, Standing, Walking, Car, Bus, Tram, Train, Phone on table </br></br>
+
+          The aim of this project is to demonstrate the capabilities of your browser to collect mobile sensor data (such as from the accelerometer, gyroscope or magnetometer)
+          to produce additional information about you, the user, who is currently visiting a website on the internet.
+          <br> </br>
+          This page focuses on deducing your activity using sensor data, and if some websites wanted to, they could track your real life activities 
+          (or other information you unintentionally expose) across many sites.
+        </br></br>
+          The message of this is to consider disabling certain Javascript API (such as the Generic Sensor API from exposing sensor data) from running on your browsers, 
+          or choose more privacy friendly browsers like Firefox or Brave.
+
+        </br></br>
+        --------------------------------------------------------
+      </br></br>
+
+        How to run this demonstration: <br><br>
+
+         Visit this website from your phone. This demonstration will work on browsers exposing sensor data, such as Chrome, Opera, Edge and other Chromium based browsers.
+         <br>
+         If you are on iOS, or are visiting from Firefox or Brave, you are safe from any mobile sensor data exposure without your consent and thus the demonstration will not work.  <br><br>
+         
+         By default in some browsers, the magnetometer is disabled, but that is ok, the experiment will still run (the magnetometer can be enabled with the flag #enable-generic-sensor-extra-classes in about:flags). 
+        </br></br>
+                <b>1.</b> Click Start to begin measurement.</br></br>
+                <b>2.</b> Proceed to perform your activity and looking at your mobile screen.
+              </br>
+                </br>- Keep this page open, do not leave or turn off the screen.
+                </br>- Measure for at least 5 seconds, then you may start to see first results. Continue with your activity</br></br>
+                <b>3.</b> Click Stop to end activity recognition</br><br>
+  
+            <br>The data being processed in this demonstration may include information from accelerometers, gyroscopes, magnetometers.
+            <br><br>For more information, please refer to our <a href="privacy-policy.html">Privacy Policy</a>.
+            <br>
+      </p>
+      </div>
+
+        <br><br>
+
+  </div>
+  <script src="script.js"></script>
+  </body>
+
+
+</html>

@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sensor Reader</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+<div style="margin: 10px 0;padding: 0 20px;">
+
+<div class="title" style="padding-left: 5px;">
+    <p>Privacy policy</p>
+</div>
+
+<div class="policy">
+    Internally, we collect personal data in line with GDPR including
+    identification of your browser (content of the UserAgent HTTP header),
+    your IP address, and timestamp of the measurement linked to the
+    measurement data. These data are necessary for research purposes to
+    evaluate the validity of the measurement, the context of the
+    measurement, and perform the measurement. We will also use the
+    measurement data to improve JShelter. We process these data with your
+    consent.
+
+    <br><br>
+
+    These personal data are controlled by Brno University of Technology,
+    Antonínská 548/1, 601 90 Brno, Czech Republic. Data protection officer
+    is Mgr. Lucie Schimmelová, BUT, Antonínská 548/1, 601 90 Brno,
+    Czech Republic, e-mail poverenec@vut.cz.
+    
+    <br><br>
+
+    Direct contact e-mail address to the researchers: Radek Hranický (hranicky@fit.vut.cz).
+    
+    <br><br>
+
+    Besides Brno University of Technology, we might share personal data
+    with other researchers at other Universities or with Free Software Foundation, 51 Franklin St. 5th Floor Boston, MA 02110-1301
+    USA. This parties will be our processors.
+    
+    <br><br>
+
+    Personal data will be stored for the time that we will prepare a paper
+    analyzing the data which should not exceed five years, during the time
+    such paper is published and for five more years to archive the data,
+    reproduce the measurements. We will create a public data set
+    containing the measurement data but NOT containing IP address and NOT
+    containing UserAgent HTTP header. However, we might accompany the
+    measurement data with geolocation data. Note that an analysis of the
+    measurement data may, theoretically, yield some more information about
+    your behavior during the measurements (like the frequency of the
+    steps). We consider publishing such data as necessary to support our
+    measurement claims. We expect to publish at scientific venues that
+    expect reproducibility. Please note that once such a data set is
+    public, we will have no control on its copies.
+    
+    <br><br>
+
+    You can excersise your right to revoke your consent by sending an
+    e-mail to the contact address above.  All personal data of that
+    measurement will be removed from our data set. You have the right to
+    access your personal data and the right for portability of your
+    personal data, in that case, we will provide you with the copy of the
+    collected data including the measurements. You have the right to
+    request corrections of your personal data. You can restrict further
+    processing of your personal data according to Art. 18 GDPR.
+    
+    <br><br>
+
+
+    To exercise your rights, please, send the researchers (preferred) or
+    the data protection officer your request including the time of the
+    measurement (as precisely as possible), IP address at which you
+    conducted your measurement and your UserAgent HTTP header. Currently,
+    your UserAgent is: <p id="user-agent"></p>
+    And your IP address is: <p id="ip-address"></p>
+    
+    
+    If you think that we process personal data in violation with GDPR, you
+    can lodge complaint at Úřad pro ochranu osobních údajů, Pplk. Sochora
+    27, 170 00 Praha 7, e-mail posta@uoou.cz, or, if you are located in
+    other EEA country, at your local data protection authority.
+
+</div>
+</div>
+
+</body>
+
+<script>
+    document.getElementById('user-agent').textContent = navigator.userAgent;
+
+    fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const ipAddress = data.ip;
+                document.getElementById('ip-address').textContent = ipAddress;
+            })
+            .catch(error => {
+                console.error('Error fetching IP address:', error);
+            });
+</script>
+
+</html>

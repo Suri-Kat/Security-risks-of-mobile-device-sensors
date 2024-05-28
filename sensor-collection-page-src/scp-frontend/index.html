@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sensor Reader</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="moment.min.js"></script> 
+  </head>
+  <body>
+    <div style="margin: 20px 0;padding-top: 20px;">
+
+      <div class="title" style="padding-left: 5px;">
+        <p>Record your activities with mobile sensors</p>
+    </div>
+
+      <div type="button" class="collapsible">Click here to hide <br> instructions</div>
+      <div class="extension">
+        <p style="margin: 15px;">
+          <br> 
+          This project gathers sensor data from mobile devices to analyze readings resulting from various activities 
+          undertaken by individuals in their daily lives, along with possibilities these activities can be tracked as 
+          the user spends time on their phone. We are also interested in environmental factors influencing the readings.
+
+        </br></br>
+
+          To contribute, please measure activities on your phones, using a browser that provides sensor readings to web pages.
+          The support for the Generic Sensor API varies for different types of browsers. 
+          <br>By default, in Chromium based browsers,
+            all sensors are supported except for the magnetometer (which can be enabled with the flag #enable-generic-sensor-extra-classes in about:flags). 
+            <br>Firefox and Safari based browsers do not have support for the Generic Sensor API.
+ 
+        </br></br>
+            <br><b>Steps to measure your activity:</b></br></br>
+                <b>1.</b> Choose your activity from the list. Click Start to begin measurement.</br></br>
+                <b>2.</b> Proceed to perform your activity while simulating normal phone use (your phone facing your face).
+              </br>
+                </br>- Keep this page open, do not leave or turn off the screen.
+                </br>- Measure for as long as you like, but ideally between 20-60 seconds.</br></br>
+                <b>3.</b> Click Stop to end recording and save measured data. If you don't want to save the measured data, click Cancel.</br><br>
+  
+            <br><br>The data collected may include information from accelerometers, gyroscopes, magnetometers, orientation sensor data, and other sensors available on your device and other data necessary to conduct the research.
+            <br>
+            <br><br>For more information, please refer to our <a href="privacy-policy.html">Privacy Policy</a>.
+            <br><br>Thank you for your consideration to help.
+            <br>
+      </p>
+      </div>
+
+        <br><br>
+
+        <div class="container">
+            <form style="font-size: 20px;">
+            <label for="activity" style="font-size: 50px;">Choose an activity:</label>
+            <select name="activity" id="activity" class="select-form">
+              <option value="lie" selected="selected">Lying down</option>
+              <option value="sit">Sitting</option>
+              <option value="stand">Standing</option>
+              <option value="walk">Walking</option>
+              <option value="run">Running</option>
+              <option value="stairsUp">Stairs up</option>
+              <option value="stairsDown">Stairs down</option>
+              <option value="bus">Taking bus</option>
+              <option value="car">Taking car</option>
+              <option value="tram">Taking tram</option>
+              <option value="train">Taking train</option>
+              <option value="metro">Taking metro</option>
+              <option value="ontable">On table</option>
+              <option value="other">Other</option>
+            </select>
+            <button type="button" id="start" class="button-form">Start</button>
+            <button type="button" id="stop" class="button-form">Stop</button>
+        </form>
+        </div>
+
+        <div class="container">
+            <h3>Experiment state</h3>
+            <!-- <canvas id="myChart"></canvas> -->
+            <div id="time-container"></div>
+            <div id="sensor-container"></div>
+            <div id="userAgent-container"></div>
+            <div id="IPaddress-container"></div>
+            <br>
+            <div id="accelerometer-container"></div>
+            <div id="gyroscope-container"></div>
+            <div id="magnetometer-container"></div>
+            <div id="gravity-container"></div>
+            <div id="linearAcceleration-container"></div>
+            <div id="absoluteOrientation-container"></div>
+            <div id="relativeOrientation-container"></div>
+            <button type="button" id="cancel" class="button-form">Cancel this recording</button>
+        </div>
+  </div>
+  <script src="script.js"></script>
+  </body>
+
+
+</html>
